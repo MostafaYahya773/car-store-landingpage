@@ -1,0 +1,116 @@
+.main {
+  &__footer {
+    background-color: $primary-light;
+    min-height: 200px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include medium-screen-down {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'quickLinks contactInfo'
+        'EmailSocial EmailSocial';
+      gap: 40px 0px;
+    }
+    padding: 20px;
+    h4 {
+      color: $secondary-dark;
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+    .footer_design {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px 0px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0px;
+        li {
+          a {
+            text-transform: capitalize;
+            color: $secondary-dark;
+            font-size: 18px;
+            display: flex;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    &--EmailSocial {
+      @include medium-screen-down {
+        grid-area: EmailSocial;
+        width: 100%;
+        align-self: stretch;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px 0px;
+      &--email {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        @include medium-screen-down {
+          width: 80%;
+        }
+        @include large-screen {
+          width: 100%;
+        }
+        input {
+          border: none;
+          outline: none;
+          height: 30px;
+          padding: 0px 5px;
+          border-radius: 10px;
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+          background-color: $secondary-dark;
+          width: 40%;
+          height: 30px;
+          border-radius: 10px;
+          color: $white;
+          font-size: 18px;
+          font-weight: 700;
+          &:hover {
+            color: $secondary-dark;
+            background-color: transparent;
+            outline: 1px solid $secondary-dark;
+            transition: all 0.5s;
+          }
+        }
+      }
+      &--links {
+        display: flex;
+        gap: 0px 30px;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          background-color: $white;
+          border-radius: 50%;
+          i {
+            font-size: 20px;
+            color: $secondary-dark;
+          }
+          &:hover {
+            color: $white;
+            transform: translateY(-10px) scale(1.2);
+            transition: transform 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

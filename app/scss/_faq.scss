@@ -1,0 +1,91 @@
+.main {
+  &__faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    &--title {
+      h1 {
+        text-transform: capitalize;
+        color: $secondary-dark;
+        font-size: 100px;
+        span {
+          color: $secondary;
+        }
+        @include large-screen-down {
+          font-size: 50px;
+        }
+        @include small-screen {
+          font-size: 30px;
+        }
+      }
+    }
+    ul {
+      padding: 20px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 10px $secondary-dark;
+      gap: 20px 0px;
+      border-radius: 20px;
+      @include small-screen {
+        width: 98%;
+      }
+      li {
+        &:last-child {
+          border-bottom: none;
+        }
+        border-bottom: 1px solid $secondary-dark;
+        padding: 5px;
+        position: relative;
+        overflow: hidden;
+        h4 {
+          cursor: pointer;
+          display: block;
+          margin-bottom: 7px;
+          font-size: 20px;
+          @include medium-screen {
+            font-size: 15px;
+          }
+          @include small-screen {
+            font-size: 12px;
+          }
+        }
+        p {
+          position: absolute;
+          top: 0;
+          display: none;
+          padding: 10px 0px;
+          font-size: 18px;
+          @include medium-screen {
+            font-size: 14px;
+          }
+          @include small-screen {
+            font-size: 12px;
+          }
+        }
+        .question {
+          position: relative;
+          i {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            @include small-screen {
+              font-size: 9px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .close {
+    display: flex;
+    position: relative;
+  }
+  .arrow-bottom {
+    transform: rotate(90deg);
+    display: flex;
+  }
+}

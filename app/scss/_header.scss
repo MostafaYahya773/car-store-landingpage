@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style: none;
+  font-family: 'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+section {
+  min-height: 100px;
+}
+
+main {
+  margin: 0 auto;
+  position: relative;
+  .arrow-up {
+    @include medium-screen-down {
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    background-color: $white;
+    box-shadow: 0 0 10px $secondary-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    i {
+      color: $secondary-dark;
+      font-size: 18px;
+    }
+    &:hover {
+      scale: 1.2;
+      transition: scale 0.2s;
+    }
+  }
+  header {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    z-index: 100;
+    nav {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      .nav__icon {
+        p {
+          font-size: 30px;
+          color: $secondary-dark;
+        }
+      }
+      .nav__links {
+        display: flex;
+        align-items: center;
+        @include medium-screen-down {
+          flex-direction: row-reverse;
+        }
+        gap: 0px 40px;
+        ul {
+          display: flex;
+          gap: 0px 30px;
+          @include medium-screen-down {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px 0px;
+            width: 100vw;
+            top: 80px;
+            right: 0;
+            border-radius: 7px;
+            z-index: 100;
+            background-color: $white;
+            box-shadow: 0 5px 10px $secondary-dark;
+          }
+
+          li {
+            @include medium-screen-down {
+              padding: 20px;
+              border-bottom: 1px solid $secondary-dark;
+              width: 100%;
+              text-align: center;
+            }
+            position: relative;
+            &:hover {
+              &::before {
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 2px;
+                background-color: $secondary;
+                bottom: -5px;
+                animation: border 0.5s 1 forwards;
+                @include medium-screen-down {
+                  animation: none;
+                }
+              }
+            }
+            a {
+              @include small-screen {
+                font-size: 15px;
+              }
+              @include medium-screen-down {
+                color: $secondary-dark;
+              }
+              color: $secondary-dark;
+              font-size: 18px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              display: block;
+            }
+          }
+        }
+        &--themes {
+          background-color: $secondary-dark;
+          width: 50px;
+          height: 18px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+          &--toggle {
+            position: absolute;
+            display: block;
+            background-color: $white;
+            width: 15px;
+            height: 15px;
+            left: 2px;
+            border-radius: 50%;
+          }
+        }
+
+        &--hamburger {
+          @include medium-screen-down {
+            display: flex;
+            flex-direction: column;
+            gap: 3px 0px;
+          }
+          display: none;
+          &:first-of-type {
+            caret-color: $secondary;
+          }
+          .span {
+            width: 35px;
+            height: 4px;
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.span-top {
+  transform: translate(-5px, 6px) rotate(40deg);
+}
+
+.span-center {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.span-end {
+  transform: translate(-5px, -8px) rotate(-40deg);
+}

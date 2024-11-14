@@ -1,0 +1,291 @@
+.main {
+  &__services {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0px;
+    &__title {
+      background: url(../img/services.jpg) no-repeat fixed 50% / cover;
+      @include small-screen {
+        background-attachment: scroll;
+      }
+      padding-left: 10px;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-self: center;
+      height: 400px;
+      position: relative;
+      background-color: $secondary;
+      z-index: -1;
+      &::after {
+        backdrop-filter: blur(5px);
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: 0;
+      }
+      h1 {
+        z-index: 10;
+        @include large-screen {
+          font-size: 100px;
+        }
+        @include medium-screen {
+          font-size: 80px;
+        }
+
+        @include small-screen {
+          font-size: 40px;
+        }
+        text-align: center;
+        font-size: 100px;
+        font-weight: 700;
+        color: $secondary;
+        span {
+          color: $secondary-dark;
+        }
+      }
+      p {
+        z-index: 10;
+        @include small-screen {
+          font-size: 16px;
+        }
+        color: $secondary-dark;
+        font-weight: 900;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        padding: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    &__options {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0px;
+      &__primary {
+        width: 90%;
+        @include small-screen {
+          width: 98%;
+          display: flex;
+          overflow: scroll;
+          scroll-snap-type: x mandatory;
+          padding: 10px;
+        }
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 auto;
+        gap: 0px 10px;
+        @include large-screen {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        @include medium-screen {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+        &--box {
+          background-color: $primary-light;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 0 5px $secondary-dark;
+          border-radius: 20px;
+          @include small-screen {
+            display: flex;
+            flex-basis: 90%;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+          }
+          &--image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 20px 20px 0px 0px;
+            img {
+              width: 100%;
+              &:hover {
+                scale: 1.2;
+                transition: scale 0.6s;
+              }
+            }
+          }
+          &--content {
+            position: relative;
+            padding: 15px;
+            h4 {
+              font-size: 35px;
+              color: $secondary-dark;
+            }
+            p {
+              color: $secondary-dark;
+              line-height: 2;
+              font-weight: 600;
+            }
+            a {
+              position: absolute;
+              @include small-screen {
+                top: 25px;
+                font-size: 20px;
+                font-weight: 500;
+              }
+              right: 15px;
+              bottom: 18px;
+              font-size: 17px;
+              color: $secondary;
+              i {
+                color: $secondary-dark;
+              }
+              &:hover {
+                transform: scale(0.9);
+                transition: all 0.3s;
+              }
+            }
+          }
+        }
+      }
+      &__another {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0px;
+        min-height: 200px;
+        border-radius: 20px;
+        &--title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 15px 0px;
+          h1 {
+            font-size: 90px;
+            @include large-screen {
+              font-size: 70px;
+            }
+            @include medium-screen {
+              font-size: 50px;
+            }
+            @include small-screen {
+              font-size: 30px;
+            }
+            span {
+              color: $secondary;
+            }
+          }
+          p {
+            @include large-screen {
+              font-size: 20px;
+            }
+            @include medium-screen {
+              font-size: 16px;
+            }
+            @include small-screen {
+              font-size: 14px;
+            }
+            font-size: 25px;
+            font-weight: 600;
+            text-align: center;
+          }
+        }
+        .insurance {
+          @include extra-large-screen {
+            flex-direction: column;
+          }
+          @include large-screen {
+            flex-direction: column;
+          }
+          @include medium-screen {
+            flex-direction: column;
+          }
+          @include small-screen {
+            flex-direction: column;
+          }
+        }
+        &__content {
+          width: 98%;
+          border-radius: 20px;
+          background-color: $primary-light;
+          box-shadow: 0 0 5px $secondary-dark;
+          margin: 0 auto;
+          display: flex;
+          margin-bottom: 10px;
+          @include ultra-large-screen {
+            flex-direction: row;
+          }
+          flex-direction: column-reverse;
+          &--image {
+            @include ultra-large-screen {
+              width: 50%;
+            }
+            width: 100%;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              border-radius: 20px;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &--details {
+            @include ultra-large-screen {
+              width: 50%;
+            }
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px 0px;
+            h1 {
+              color: $secondary-dark;
+              font-size: 40px;
+              @include small-screen {
+                font-size: 22px;
+              }
+            }
+            ul {
+              display: flex;
+              flex-direction: column;
+              padding-left: 40px;
+              gap: 20px 0px;
+              li {
+                counter-increment: count;
+                position: relative;
+                color: $secondary-dark;
+                font-weight: 400;
+                font-size: 15px;
+                font-weight: 700;
+                span {
+                  font-weight: 700;
+                  color: $secondary;
+                  font-size: 18px;
+                }
+                &::after {
+                  content: counter(count);
+                  position: absolute;
+                  width: 30px;
+                  height: 20px;
+                  text-align: center;
+                  border-radius: 10px;
+                  background-color: $secondary;
+                  color: white;
+                  left: -40px;
+                  top: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  height: 0;
+}

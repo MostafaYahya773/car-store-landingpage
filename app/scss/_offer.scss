@@ -1,0 +1,426 @@
+.main {
+  &__offers {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0px;
+    &__title {
+      background: url(../img/our\ offera.jpeg) no-repeat fixed 50% / cover;
+      @include small-screen {
+        background-attachment: scroll;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px 0px;
+      height: 400px;
+      position: relative;
+      &::after {
+        backdrop-filter: blur(5px);
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: 0;
+      }
+      h1 {
+        z-index: 10;
+        font-size: 120px;
+        color: $secondary;
+        @include small-screen {
+          font-size: 50px;
+        }
+        span {
+          color: $secondary-dark;
+        }
+      }
+      p {
+        z-index: 10;
+        color: $white;
+        font-weight: 900;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        padding: 10px;
+        margin-right: 10px;
+        @include small-screen {
+          font-size: 16px;
+        }
+      }
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0px;
+      width: 98%;
+      @include ultra-large-screen {
+        width: 90%;
+      }
+      margin: 0 auto;
+
+      &--links {
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0px 40px;
+          @include small-screen {
+            gap: 0px 10px;
+            flex-wrap: wrap;
+            gap: 20px;
+          }
+          li {
+            background-color: #ff6500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            @include small-screen {
+              font-size: 13px;
+            }
+            &:hover {
+              background-color: #0b192c;
+              transition: margin-top, background-color 0.5s;
+              margin-top: -5px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .boxSpecial {
+        position: relative;
+        span {
+          position: absolute;
+          width: 100px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $white;
+          top: 0px;
+          z-index: 10;
+          right: 0px;
+          font-size: 12px;
+          text-align: center;
+          color: $white;
+          font-weight: 600;
+          border-radius: 0px 10px 0px 10px;
+          background-color: $secondary-dark;
+        }
+      }
+
+      .boxLatest {
+        position: relative;
+        &::after {
+          content: '40% descound';
+          position: absolute;
+          width: 100px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          z-index: 10;
+          right: 0;
+          background-color: $secondary-dark;
+          font-size: 12px;
+          text-align: center;
+          color: $white;
+          font-weight: 600;
+          border-radius: 0px 10px 0px 10px;
+        }
+      }
+      .favoritebox {
+        display: none;
+      }
+
+      &--boxs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 20px;
+        gap: 10px;
+        border-radius: 15px;
+        @include large-screen {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          padding: 0;
+        }
+        @include medium-screen {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          padding: 0;
+        }
+        @include small-screen {
+          scroll-snap-type: x mandatory;
+          display: flex;
+          gap: 20px;
+          overflow: scroll;
+          padding: 10px;
+        }
+
+        &--box {
+          @include small-screen {
+            scroll-snap-align: center;
+            flex-basis: 90%;
+            flex-shrink: 0;
+            grid-template-rows: none;
+            height: 100%;
+          }
+          background-color: $primary-light;
+          box-shadow: 0 0 5px $secondary-dark;
+          padding: 15px;
+          border-radius: 15px;
+          display: grid;
+          grid-template-rows: auto 1fr auto;
+          &--images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include small-screen {
+              height: 274px;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          &--prise {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            h1 {
+              color: $secondary-dark;
+              font-size: 30px;
+            }
+            p {
+              color: $secondary;
+            }
+          }
+          &--details {
+            &--star {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              i {
+                font-size: 20px;
+                cursor: pointer;
+                color: $white;
+              }
+            }
+            display: flex;
+            flex-direction: column;
+            gap: 10px 0px;
+            h4 {
+              font-size: 40px;
+              color: $secondary-dark;
+            }
+            a {
+              padding: 10px;
+              border-radius: 10px;
+              color: $white;
+              font-weight: 700;
+              text-align: center;
+              background-color: $secondary-dark;
+              &:hover {
+                background-color: transparent;
+                color: $secondary-dark;
+                font-weight: 700;
+                outline: 2px solid $secondary-dark;
+                transition: background-color 0.5s, color 0.5s, outline 0.1s;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__slider {
+      width: 100vw;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 5px 0px;
+      @include medium-screen-down {
+        gap: 15px 0px;
+      }
+      &--title {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0px;
+        text-align: center;
+        h1 {
+          @include large-screen {
+            font-size: 50px;
+          }
+          @include medium-screen {
+            font-size: 50px;
+          }
+          @include small-screen {
+            font-size: 30px;
+          }
+          font-size: 100px;
+          text-transform: capitalize;
+          color: $secondary;
+          span {
+            color: $secondary-dark;
+            display: inline-block;
+          }
+        }
+        p {
+          font-size: 20px;
+          font-weight: 600;
+          color: $secondary-dark;
+          @include large-screen {
+            font-size: 16px;
+          }
+
+          @include medium-screen {
+            font-size: 16px;
+          }
+          @include small-screen {
+            font-size: 16px;
+          }
+        }
+      }
+      &--arrows {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        @include medium-screen-down {
+          transform: translateY(10px);
+        }
+        gap: 0px 10px;
+        color: white;
+        padding: 0px 5px;
+        .right,
+        .left {
+          border-radius: 5px;
+          padding: 5px 10px;
+          background-color: #ff6500;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+          }
+        }
+      }
+      &--boxs {
+        position: relative;
+        overflow-x: scroll;
+        display: flex;
+        scroll-snap-type: x mandatory;
+
+        &--box {
+          flex-basis: 100%;
+          flex-shrink: 0;
+          scroll-snap-align: start;
+          border: 1px solid $secondary-dark;
+          &--info {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 100%;
+            gap: 40px 0px;
+            background-color: $primary-light;
+            h1 {
+              font-size: 45px;
+              color: $secondary-dark;
+              @include large-screen {
+                font-size: 30px;
+              }
+              @include medium-screen {
+                font-size: 30px;
+              }
+              @include small-screen {
+                font-size: 20px;
+              }
+            }
+            ul {
+              display: flex;
+              flex-direction: column;
+              gap: 20px 0px;
+              li {
+                span {
+                  color: $secondary;
+                  font-weight: 700;
+                  font-size: 20px;
+                  @include large-screen {
+                    font-size: 18px;
+                  }
+                  @include medium-screen {
+                    font-size: 16px;
+                  }
+                  @include small-screen {
+                    font-size: 14px;
+                  }
+                }
+                @include large-screen {
+                  font-size: 16px;
+                }
+                @include medium-screen {
+                  font-size: 16px;
+                }
+                @include small-screen {
+                  font-size: 14px;
+                }
+                color: $secondary-dark;
+                position: relative;
+                padding-left: 40px;
+                font-size: 18px;
+                &::before {
+                  @include large-screen {
+                    font-size: 18px;
+                  }
+                  @include medium-screen {
+                    font-size: 18px;
+                  }
+                  @include small-screen {
+                    font-size: 14px;
+                  }
+                  content: 'L';
+                  position: absolute;
+                  width: 20px;
+                  height: 20px;
+                  text-align: center;
+                  transform: rotateY(177deg) rotate(-27deg);
+                  left: 5px;
+                  color: $secondary;
+                }
+              }
+            }
+            a {
+              @include small-screen {
+                align-self: center;
+                padding: 10px 110px;
+              }
+              @include medium-screen {
+                align-self: center;
+                padding: 10px 180px;
+              }
+              background-color: $white;
+              align-self: flex-end;
+              padding: 10px 180px;
+              border-radius: 20px;
+              color: $secondary-dark;
+              font-size: 25px;
+              font-weight: 500;
+              text-transform: capitalize;
+              &:hover {
+                outline: $white 2px solid;
+                background-color: transparent;
+                color: $secondary-dark;
+                transition: all 0.3s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .starColor {
+    color: $secondary;
+  }
+}
+
+.limitAnimation {
+  animation: limitAnimation 0.5s 1;
+}

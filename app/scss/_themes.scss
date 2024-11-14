@@ -1,0 +1,304 @@
+.dark-themes {
+  background-color: $black;
+}
+.dark--mode {
+  header {
+    .nav__links {
+      ul {
+        li {
+          a {
+            color: $white;
+          }
+        }
+      }
+      &--themes {
+        background-color: $white;
+      }
+    }
+    .nav__icon {
+      p {
+        color: $white;
+      }
+    }
+  }
+  .toggle--dark {
+    transform: translateX(200%);
+    background-color: $secondary-dark;
+    transition: all 0.5s;
+  }
+
+  .main__hero {
+    background-color: $secondary-dark;
+    transition: all 0.5s;
+    &__content {
+      &--title {
+        h1 {
+          @include medium-screen-down {
+            color: $white;
+          }
+        }
+
+        p {
+          @include medium-screen-down {
+            color: $white;
+          }
+        }
+      }
+    }
+    &::before {
+      transition: all 0.5s;
+      background-color: $secondary;
+    }
+    &--btn {
+      transition: all 0.5s;
+      ul {
+        background-color: $secondary;
+        &::after {
+          background-color: $secondary;
+        }
+        li {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .main__services {
+    &__options {
+      &__primary {
+        .main__services__options__primary--box {
+          background-color: $card--dark;
+          box-shadow: 0 0 5px $white;
+          .main__services__options__primary--box--content {
+            h4 {
+              color: $secondary;
+            }
+            p {
+              color: $white;
+            }
+            a {
+              color: $primary-light;
+              i {
+                margin-left: 5px;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      &__another {
+        &--title {
+          h1 {
+            color: $white;
+          }
+          p {
+            color: $white;
+          }
+        }
+        &__content {
+          background-color: $card--dark;
+          box-shadow: 0 0 5px $white;
+
+          &--details {
+            h1 {
+              color: $white;
+            }
+            ul {
+              li {
+                color: $white;
+                font-weight: 400;
+                span {
+                  color: $secondary;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main__offers {
+    &__container {
+      &--links {
+        ul {
+          li {
+            &:hover {
+              background-color: $white;
+              color: $secondary-dark;
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+      &--boxs {
+        &--box {
+          background-color: $card--dark;
+          box-shadow: 0 0 5px $white;
+
+          &--prise {
+            h1 {
+              color: $secondary;
+            }
+            p {
+              color: $white;
+            }
+          }
+          &--details {
+            h4 {
+              color: $white;
+            }
+            a {
+              background-color: $secondary;
+              &:hover {
+                background-color: transparent;
+                color: $white;
+                font-weight: 700;
+                outline: 2px solid $white;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__slider {
+      &--title {
+        h1 {
+          span {
+            color: $white;
+          }
+        }
+        p {
+          color: $white;
+        }
+      }
+      &--arrows {
+        .right,
+        .left {
+          color: $black;
+          background-color: $white;
+        }
+      }
+      &--boxs {
+        .slide_offer {
+          background-color: $secondary-dark;
+          color: $white;
+          border: 1px solid $white;
+          border-right: none;
+        }
+        &--box {
+          &--info {
+            background-color: $secondary;
+            h1 {
+              color: $white;
+            }
+            ul {
+              li {
+                color: $white;
+                span {
+                  color: $black;
+                }
+                &::before {
+                  color: $primary-light;
+                }
+              }
+            }
+            a {
+              &:hover {
+                color: $secondary-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main__faq {
+    &--title {
+      h1 {
+        color: $white;
+      }
+    }
+    ul {
+      box-shadow: 0 0 10px $white;
+      li {
+        border-bottom: 1px solid $white;
+        h4 {
+          color: $secondary;
+        }
+        p {
+          color: $white;
+        }
+        .question {
+          i {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .main__footer {
+    border-top: 1px solid $white;
+    background-color: $card--dark;
+    h4 {
+      color: $white;
+    }
+    .footer_design {
+      ul {
+        li {
+          a {
+            color: $secondary;
+          }
+        }
+      }
+    }
+    &--EmailSocial {
+      &--email {
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+          background-color: $secondary;
+          width: 40%;
+          height: 30px;
+          border-radius: 10px;
+          color: $white;
+          font-size: 18px;
+          font-weight: 700;
+          &:hover {
+            color: $white;
+            background-color: transparent;
+            outline: 1px solid $white;
+            transition: all 0.5s;
+          }
+        }
+      }
+      &--links {
+        display: flex;
+        gap: 0px 30px;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          background-color: $secondary;
+          border-radius: 50%;
+          i {
+            font-size: 20px;
+            color: $white;
+          }
+          &:hover {
+            color: $white;
+            transform: translateY(-10px) scale(1.2);
+            transition: transform 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

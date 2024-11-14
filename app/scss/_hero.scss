@@ -1,0 +1,190 @@
+.main {
+  overflow-x: hidden;
+  max-width: 1800px;
+  &__hero {
+    position: relative;
+    background-color: $primary-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+    gap: 0px 0px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      min-height: 100%;
+      background-color: $white;
+      clip-path: polygon(0 0, 70% 0, 43% 100%, 0% 100%);
+      @include small-screen {
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+      }
+      z-index: 0;
+    }
+    &__content {
+      padding: 0px 20px;
+      display: flex;
+      justify-content: space-around;
+      @include medium-screen-down {
+        flex-direction: column;
+        margin-top: 60px;
+      }
+      @include large-screen {
+        margin-top: 70px;
+      }
+      align-items: center;
+      gap: 0px 20px;
+      margin-top: 20px;
+      &--title {
+        width: 50%;
+        @include medium-screen-down {
+          width: 100%;
+          padding: 20px 0px;
+          gap: 10px 0px;
+        }
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px 0px;
+        @include large-screen {
+          gap: 20px 0px;
+        }
+        h1 {
+          color: $secondary-dark;
+          @include medium-screen-down {
+            color: $secondary-dark;
+          }
+          line-height: 1.1;
+          font-size: 80px;
+          font-weight: bold;
+          @include large-screen {
+            font-size: 59px;
+          }
+          @include medium-screen {
+            font-size: 45px;
+          }
+          @include small-screen {
+            font-size: 25px;
+          }
+        }
+        p {
+          color: $secondary-dark;
+          @include medium-screen-down {
+            color: $secondary-dark;
+          }
+          font-weight: bold;
+          line-height: 1.6;
+          @include small-screen {
+            font-size: 14px;
+            padding: 10px;
+          }
+        }
+      }
+      &--car {
+        width: 50%;
+        @include medium-screen-down {
+          width: 100%;
+        }
+
+        z-index: 2;
+        display: flex;
+        img {
+          width: 100%;
+          @include medium-screen-down {
+            transform: rotateY(-180deg) scale(1.2) translateX(-25px);
+          }
+          transform: rotateY(-180deg) scale(1.2);
+        }
+      }
+    }
+    &--btn {
+      padding: 20px 20px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-around;
+      @include large-screen {
+        justify-content: space-between;
+      }
+      @include medium-screen {
+        justify-content: space-between;
+      }
+      @include small-screen {
+        flex-direction: column-reverse;
+        gap: 20px 0px;
+      }
+      align-items: center;
+      a {
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        background-color: $secondary-dark;
+        width: 250px;
+        height: 50px;
+        border-radius: 20px;
+        @include small-screen {
+          border: 3px solid $white;
+        }
+        &:hover {
+          background-color: $white;
+          color: $secondary-dark;
+          font-weight: bold;
+          outline: $secondary-dark 2px solid;
+          transition: background-color 0.5s;
+        }
+      }
+      ul {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 150%;
+          height: 50%;
+          left: -90px;
+          top: 20px;
+          background-color: $secondary-dark;
+          transform: rotate(40deg);
+          z-index: 0;
+          animation: rotate 3s 2 linear forwards;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 98%;
+          height: 90%;
+          left: 4px;
+          top: 3px;
+          border-radius: 10px;
+          background-color: $white;
+          z-index: 1;
+        }
+        @include small-screen {
+          border: 3px solid $white;
+        }
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        background-color: $white;
+        padding: 20px;
+        display: flex;
+        gap: 0px 50px;
+        @include large-screen {
+          gap: 0px 40px;
+        }
+        @include medium-screen {
+          gap: 0px 12px;
+        }
+        li {
+          z-index: 10;
+          color: $secondary-dark;
+          text-align: center;
+          font-weight: 700;
+          @include medium-screen {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

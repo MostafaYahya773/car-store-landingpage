@@ -1,0 +1,235 @@
+.main {
+  &__contact {
+    background-image: url(../img/car-finalbg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    margin-bottom: 70px;
+    @include medium-screen {
+      padding: 10px;
+      background-attachment: scroll;
+    }
+    @include small-screen {
+      padding: 0;
+      background-attachment: scroll;
+    }
+    &__hero {
+      box-shadow: 0 0 10px $secondary-dark;
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      padding: 15px;
+      backdrop-filter: blur(11px);
+      border-radius: 20px;
+      gap: 40px 0px;
+      @include small-screen {
+        border-radius: 0px;
+      }
+      &--title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 80px;
+          text-transform: capitalize;
+          @include small-screen {
+            font-size: 40px;
+          }
+        }
+      }
+
+      form {
+        box-shadow: 0 0 20px $secondary-dark inset;
+        @include medium-screen {
+          width: 98%;
+        }
+        @include small-screen {
+          width: 95%;
+        }
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px 0px;
+        label {
+          display: block;
+        }
+        input {
+          margin-top: 20px;
+          width: 100%;
+          height: 50px;
+          @include large-screen {
+            height: 40px;
+          }
+          @include medium-screen {
+            height: 35px;
+          }
+          border-radius: 10px;
+          outline: none;
+          padding: 0px 20px;
+          font-size: 20px;
+          &:focus {
+            border: 1px solid $secondary-dark;
+            transition: all 0.2s;
+          }
+        }
+
+        i {
+          display: none;
+          position: absolute;
+          right: 10px;
+          bottom: 15px;
+          @include large-screen {
+            bottom: 11px;
+          }
+          @include medium-screen {
+            bottom: 10px;
+          }
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .username {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 0px 20px;
+          width: 100%;
+          @include small-screen {
+            flex-direction: column;
+            gap: 20px 0px;
+          }
+          @include large-screen {
+            flex-direction: column;
+            gap: 20px 0px;
+          }
+          @include medium-screen {
+            flex-direction: column;
+            gap: 20px 0px;
+          }
+          &__fname {
+            position: relative;
+            @include small-screen {
+              width: 100%;
+            }
+            @include large-screen {
+              width: 100%;
+            }
+            @include medium-screen {
+              width: 100%;
+            }
+            width: 50%;
+            input {
+              width: 100%;
+            }
+          }
+          &__Lname {
+            position: relative;
+            @include small-screen {
+              width: 100%;
+            }
+            @include large-screen {
+              width: 100%;
+            }
+            @include medium-screen {
+              width: 100%;
+            }
+            width: 50%;
+            input {
+              width: 100%;
+            }
+          }
+        }
+        .email {
+          position: relative;
+        }
+        .phone {
+          position: relative;
+        }
+        .message {
+          textarea {
+            width: 100%;
+            height: 200px;
+            padding: 20px;
+            font-size: 20px;
+            outline: none;
+            border-radius: 20px;
+            margin-top: 20px;
+            &:focus {
+              border: solid 1px $secondary-dark;
+            }
+          }
+        }
+        .submit {
+          background-color: $secondary-dark;
+          color: $white;
+          &:hover {
+            background-color: $white;
+            color: $secondary-dark;
+            transition: all 0.5s;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &--details {
+        ul {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          @include small-screen {
+            grid-template-columns: none;
+            grid-template-rows: repeat(2, 1fr);
+          }
+          li {
+            text-align: center;
+            color: $secondary-dark;
+            margin: 10px 5px;
+            font-size: 18px;
+            font-weight: bold;
+            h3 {
+              font-size: 25px;
+              color: $secondary-dark;
+              font-weight: bold;
+              text-align: center;
+            }
+            p {
+              @include small-screen {
+                font-size: 14px;
+              }
+              i {
+                color: $white;
+                margin-right: 7px;
+              }
+            }
+
+            .accounts {
+              display: flex;
+              justify-content: center;
+              gap: 0px 20px;
+              a {
+                margin: 10px 0px;
+                i {
+                  color: #0b192c;
+                  font-size: 25px;
+                  &:hover {
+                    color: #ffffff;
+                    transition: color 0.3s;
+                  }
+                }
+                &:hover {
+                  transform: scale(1.1) translateY(-5px);
+                  transition: transform 0.5s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

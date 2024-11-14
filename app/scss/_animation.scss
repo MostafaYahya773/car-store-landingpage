@@ -1,0 +1,39 @@
+// hero animation
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//offer animation
+@keyframes limitAnimation {
+  0% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+// our services animation
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//header animation
+@keyframes border {
+  to {
+    width: 100%;
+  }
+}
